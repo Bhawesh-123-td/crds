@@ -1,0 +1,5 @@
+const menuToggle=document.querySelector('.menu-toggle');const navLinks=document.querySelector('#nav-links');if(menuToggle){menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',open)})}
+document.querySelectorAll('#nav-links a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle?.setAttribute('aria-expanded','false')}));
+const filters=document.querySelectorAll('.filter');const projects=document.querySelectorAll('.project-card');filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;projects.forEach(p=>p.classList.toggle('hidden',f!=='all'&&p.dataset.category!==f))}));
+function handleSubmit(e){e.preventDefault();document.querySelector('#form-message').textContent='Demo form only — connect this form to CRDS email/API before production launch.';e.target.reset();return false}
+document.querySelector('#year').textContent=new Date().getFullYear();
